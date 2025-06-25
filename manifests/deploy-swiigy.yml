@@ -27,9 +27,8 @@ metadata:
   name: svc-2
 spec:
   selector:
-    app: swiggy
-    spec:
-      clusterIP : None
-      ports:
-        - port: 3306
-          targetPort: 3306
+    app: db
+  clusterIP : None
+  ports:
+    - port: 3306
+      targetPort: 3306
