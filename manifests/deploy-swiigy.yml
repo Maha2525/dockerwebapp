@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: StatefullSet
+kind: StatefulSet
 metadata:
   name: devopsapp
 spec:
@@ -18,7 +18,7 @@ spec:
         ports:
         - containerPort: 3306
       imagePullSecrets:
-          - name: dockerhub
+        - name: dockerhub
 
 ---
 apiVersion: v1
