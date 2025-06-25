@@ -27,7 +27,7 @@ metadata:
   name: svc-2
 spec:
   selector:
-    app: db
+    app: swiggy
     spec:
       clusterIP : None
       ports:
