@@ -17,7 +17,7 @@ spec:
         image: maha2525/maharepo:appimage
         ports:
         - containerPort: 8080
-        imagePullSecret:
+        imagePullSecrets:
           - name: dockerhub
 
 ---
