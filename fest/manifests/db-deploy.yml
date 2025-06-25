@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefullSet
+metadata:
+  name: devopsapp
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: cont-2
+        image: maha2525/maharepo:dbimage
+        ports:
+        - containerPort: 3306
+      imagePullSecrets:
+          - name: dockerhub
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-2
+spec:
+  selector:
+    app: db
+    spec:
+      clusterIP : None
+      ports:
+        - Port: 3306
+          targetPort: 3306
