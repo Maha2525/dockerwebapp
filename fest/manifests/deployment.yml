@@ -1,1 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: swiggy
+  template:
+    metadata:
+      labels:
+        app: swiggy
+    spec:
+      containers:
+      - name: cont-1
+        image: maha2525/maharepo:appimage
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+          - name: dockerhub
 
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: svc-1
+spec:
+  selector:
+    app: swiggy
+    spec:
+      type: LoadBalancer
+      ports:
+        - Port: 8080
+          targetPort: 8080
