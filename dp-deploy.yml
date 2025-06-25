@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: StatefulSet
+kind: StatefullSet
 metadata:
   name: devopsapp
 spec:
@@ -27,7 +27,7 @@ spec:
   selector:
     app: db
     spec:
-      ClusterIP : None
+      clusterIP : None
       ports:
         - Port: 3306
           targetPort: 3306
