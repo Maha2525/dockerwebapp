@@ -6,11 +6,11 @@ spec:
   replicas: 3
   selector:
     matchLabels:
-      app: swiggy
+      app: dm
   template:
     metadata:
       labels:
-        app: swiggy
+        app: dm
     spec:
       containers:
       - name: cont-1
@@ -27,7 +27,7 @@ metadata:
   name: svc-1
 spec:
   selector:
-    app: swiggy
+    app: dm
   type: LoadBalancer
   ports:
     - port: 8080
