@@ -13,7 +13,7 @@ spec:
         app: db
     spec:
       containers:
-      - name: cont-1
+      - name: cont-2
         image: maha2525/maharepo:dbimage
         ports:
         - containerPort: 3306
